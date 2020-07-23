@@ -45,17 +45,17 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
 
 $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
-$map->get('index','/curso/',[
+$map->get('index','/',[
                             'controller' =>'App\Controller\IndexController',
                             'action' => 'indexAction'
                             ]);
 
-$map->get('addJobs','/curso/jobs/add',[
+$map->get('addJobs','/jobs/add',[
     'controller' => 'App\Controller\JobsController',
     'action' => 'getAddJobAction'
 ]);
 
-$map->post('saveJobs','/curso/jobs/add',[
+$map->post('saveJobs','/jobs/add',[
     'controller' => 'App\Controller\JobsController',
     'action' => 'getAddJobAction'
 ]);
