@@ -9,7 +9,7 @@ require_once '../vendor/autoload.php';
 
 session_start();
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . 'curso/..');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
