@@ -2,13 +2,12 @@
 
 namespace App\Controller;
 
-use App\Models\Job;
-use App\Models\Project;
+use App\Models\{Job, Project};
 
 class IndexController extends BaseController {
     public function indexAction(){
         $jobs = Job::all();
-        $project1 = project::all();
+        $project1 = Project::all();
           
         
         $projects = [

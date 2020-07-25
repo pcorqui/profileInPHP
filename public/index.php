@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 require_once '../vendor/autoload.php';
 
-session_start();
+//session_start();
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
@@ -63,11 +63,11 @@ $map->post('saveJobs','/jobs/add',[
 $matcher = $routerContainer->getMatcher();
 $route = $matcher->match($request);
 
-
+/*
 function printElement($job) {
     /*if($job->visible == false) {
       return;
-    }*/
+    }
   
     echo '<li class="work-position">';
     echo '<h5>' . $job->title. '</h5>';
@@ -80,7 +80,8 @@ function printElement($job) {
     echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
     echo '</ul>';
     echo '</li>';
-  }
+  }*/
+
 
 if(!$route){
     echo 'No router';
