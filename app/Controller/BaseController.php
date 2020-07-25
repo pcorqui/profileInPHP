@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Zend\Diactoros\Response\Htmlresponse;
+use Zend\Diactoros\Response\HTMLresponse;
 
 class BaseController{
 
