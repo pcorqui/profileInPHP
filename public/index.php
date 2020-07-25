@@ -1,15 +1,15 @@
 <?php
 
-/*ini_set('display_errors',1);
+ini_set('display_errors',1);
 ini_set('display_starup_error',1);
 
-error_reporting(E_ALL);*/
+error_reporting(E_ALL);
 
 require_once '../vendor/autoload.php';
 
 //session_start();
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/..');
 $dotenv->load();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -46,17 +46,17 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
 $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
 $map->get('index','/',[
-                            'controller' =>'App\Controller\IndexController',
+                            'controller' =>'App\Controllers\IndexController',
                             'action' => 'indexAction'
                             ]);
 
 $map->get('addJobs','/jobs/add',[
-    'controller' => 'App\Controller\JobsController',
+    'controller' => 'App\Controllers\JobsController',
     'action' => 'getAddJobAction'
 ]);
 
 $map->post('saveJobs','/jobs/add',[
-    'controller' => 'App\Controller\JobsController',
+    'controller' => 'App\Controllers\JobsController',
     'action' => 'getAddJobAction'
 ]);
 
